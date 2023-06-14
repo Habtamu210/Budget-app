@@ -1,5 +1,5 @@
 class Catagory < ApplicationRecord
   belongs_to :user
-  has_many :category_expenses, dependent: :destroy
-  has_many :expenses, through: :category_expenses
+  has_many :catagory_expenses, dependent: :destroy
+  has_many :expenses, through: :catagory_expenses
 end
