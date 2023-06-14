@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-  has_many :categories
-  has_many :trades, foreign_key: 'author_id', class_name: 'Trade', dependent: :destroy
+  has_many :expenses, dependent: :destroy
+  has_many :categories, dependent: :destroy
 end
