@@ -36,8 +36,8 @@ class CatagoriesController < ApplicationController
 
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
-    if @category.update(category_params)
-      redirect_to categories_url, notice: 'Category was successfully updated.'
+    if @category.update(catagory_params)
+      redirect_to catagories_url, notice: 'Category was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -45,8 +45,8 @@ class CatagoriesController < ApplicationController
 
   # DELETE /categories/1 or /categories/1.json
   def destroy
-    @category.destroy
-    redirect_to categories_url, notice: 'Category was successfully destroyed.'
+    @catagory.destroy
+    redirect_to catagories_url, notice: 'Category was successfully destroyed.'
   end
 
   private
@@ -57,11 +57,11 @@ class CatagoriesController < ApplicationController
   end
 
   def set_category
-    @category = set_user.categories.find(params[:id])
+    @catagory = set_user.catagories.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
-  def category_params
-    params.require(:category).permit(:name, :icon)
+  def catagory_params
+    params.require(:catagory).permit(:name, :icon)
   end
 end

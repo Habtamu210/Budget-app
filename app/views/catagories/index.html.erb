@@ -1,0 +1,47 @@
+<% content_for :title, 'My-Exp | Catagories' %>
+
+  <%= javascript_import_module_tag "menu" %>
+
+<div class="grand-total">
+        <p class="amount-label">Total Amount</p>
+        <p class="amount"><%= "$#{@total}" %></p>
+</div>
+    <div class="container card-wrap">
+    <% if @catagories.present? %>
+    
+    <% @catagories.each do |category| %>   
+       
+          <%= link_to  catagory_expenses_path(catagory), class: "card-link" do %>
+            <div class="card"> 
+              <div class="card-img-wrapper">
+                <img src="<%= catagory.icon %>", alt="catagory image" class="card-img" />
+              </div>
+          
+              <div class="text-container">
+                <div class="flex-row">
+                  <h4 class="text-lg">
+                    <%= catagory.name %>
+                  </h4>
+                  <div class="amount">
+                    <%= "$#{catagory.total_amount}" %>
+                  </div>
+                </div>
+                <p class="text-xs"><%= catagory.created_at.strftime("%d %b %Y") %></p>
+              </div>
+              
+            </div>
+          <% end %>
+          <% end %>
+    <% else %>
+        <div class="actions">
+            You don't have any category yet! Create one.
+        </div>
+    <% end %>
+
+    <div class = "btn-wrapper">
+      <%= link_to new_catagory_path, class: 'btn-add' do %>
+        <span class = "btn-spacer"> Add catagory </span>
+        <%= image_tag('https://img.icons8.com/color-glass/30/null/plus-2-math.png', class:"back-arrow") %>
+        <% end %>
+    </div>
+</div>

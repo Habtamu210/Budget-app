@@ -1,10 +1,10 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: %i[edit update destroy]
-  before_action :set_category, only: %i[index new edit create update destroy]
+  before_action :set_catagory, only: %i[index new edit create update destroy]
   before_action :set_user, only: %i[index edit create update destroy]
   # GET /expenses or /expenses.json
   def index
-    @expenses = @category.expenses.order(created_at: :desc)
+    @expenses = @catagory.expenses.order(created_at: :desc)
   end
 
   # GET category/expenses/new
@@ -20,8 +20,8 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(**expense_params)
     @expense.user = current_user
     if @expense.save
-      @category_expense = CategoryExpense.create(category: @category, expense: @expense)
-      redirect_to category_expenses_url(@category), notice: 'Expense was successfully created.'
+      @catagory_expense = CatagoryExpense.create(catagory: @catagory, expense: @expense)
+      redirect_to catagory_expenses_url(@catagory), notice: 'Expense was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class ExpensesController < ApplicationController
   # PATCH/PUT category/expenses/1
   def update
     if @expense.update(expense_params)
-      redirect_to category_expenses_url, notice: 'Expense was successfully updated.'
+      redirect_to catagory_expenses_url, notice: 'Expense was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -39,7 +39,7 @@ class ExpensesController < ApplicationController
   # DELETE category/expenses/1
   def destroy
     @expense.destroy
-    redirect_to category_expenses_url(@category), notice: 'Expense was successfully destroyed.'
+    redirect_to catagory_expenses_url(@catagory), notice: 'Expense was successfully destroyed.'
   end
 
   private
@@ -49,8 +49,8 @@ class ExpensesController < ApplicationController
     @user = current_user
   end
 
-  def set_category
-    @category = set_user.categories.find(params[:category_id])
+  def set_catagory
+    @catagory = set_user.catagories.find(params[:catagory_id])
   end
 
   def set_expense

@@ -1,0 +1,7 @@
+<% content_for :title, 'My-Exp | New Catagory' %>
+<section class="container authentication">
+  <h1 class="text-main-header">New Category</h1>
+
+  <%= render "form", catagory: @catagory %>
+  <%= link_to 'Back to catagories', catagories_path, class: "" %>
+</section>
