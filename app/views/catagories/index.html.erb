@@ -1,4 +1,4 @@
-<% content_for :title, 'My-Exp | Catagories' %>
+<% content_for :title, 'budget-app | Catagories' %>
 
   <%= javascript_import_module_tag "menu" %>
 
@@ -9,7 +9,7 @@
     <div class="container card-wrap">
     <% if @catagories.present? %>
     
-    <% @catagories.each do |category| %>   
+    <% @catagories.each do |catagory| %>   
        
           <%= link_to  catagory_expenses_path(catagory), class: "card-link" do %>
             <div class="card"> 
