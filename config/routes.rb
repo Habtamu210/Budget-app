@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :helpers
+  devise_for :models
+  devise_for :views
+  devise_for :installs
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
