@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :helpers
-  devise_for :models
-  devise_for :views
-  devise_for :installs
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -14,7 +10,7 @@ Rails.application.routes.draw do
   # end
 
   resources :users, only: [:splash]
-  resources :categories, only: %i[index new create edit update destroy], path: 'categories' do
+  resources :catagories, only: %i[index new create edit update destroy], path: 'catagories' do
     resources :expenses, only: %i[index new create edit update destroy], path: 'transactions'
   end
 end
