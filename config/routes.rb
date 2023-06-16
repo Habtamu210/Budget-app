@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'users#splash'
 
-    # devise_scope :user do
-    #   root to: 'devise/sessions#new'
-    # end
+  # devise_scope :user do
+  #   root to: 'devise/sessions#new'
+  # end
 
-    resources :users, only: [:splash]
-    resources :categories, only: [:index, :new, :create, :edit, :update, :destroy], :path => "categories" do 
-    resources :expenses, only: [:index, :new, :create, :edit, :update, :destroy], :path => "transactions"
+  resources :users, only: [:splash]
+  resources :categories, only: %i[index new create edit update destroy], path: 'categories' do
+    resources :expenses, only: %i[index new create edit update destroy], path: 'transactions'
   end
 end
