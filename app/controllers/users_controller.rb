@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       render :splash
     end
   end
-  
+
   # GET /users or /users.json
   def index
     @users = User.all
