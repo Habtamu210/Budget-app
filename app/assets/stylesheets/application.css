@@ -130,3 +130,93 @@ button.btn-link {
   font-weight: 600;
   font-size: x-large;
 }
+
+.menu-item {
+  width: 100%;
+  font-size: 0.9rem;
+  color: #ffffff9e;
+  display: flex;
+  gap: 5%;
+  padding: 5px 0;
+  justify-content: center;
+  flex-direction: column-reverse;
+}
+
+.color-second {
+  color: var(--third);
+}
+
+.splash {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  gap: 3rem;
+}
+
+.splash-cont {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  width: 50%;
+}
+
+.signin-signup {
+  width: 100%;
+}
+
+.signin,
+.signup {
+  display: block;
+  border-radius: 6px;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 2rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.signin {
+  background-color: var(--main);
+  color: wheat;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup {
+  color: var(--third);
+}
+
+.card-wrap {
+  padding: 10px 15px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 80px;
+  width: 100%;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #719ece;
+}
+
+.card-img-wrapper {
+  width: 70px;
+  height: 70px;
+  padding: 5px 10px;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
