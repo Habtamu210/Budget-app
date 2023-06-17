@@ -11,6 +11,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:splash]
   resources :categories, only: %i[index new create edit update destroy], path: 'categories' do
-    resources :expenses, only: %i[index new create edit update destroy], path: 'transactions'
+  resources :expenses, only: %i[index new create edit update destroy], path: 'transactions'
   end
 end
