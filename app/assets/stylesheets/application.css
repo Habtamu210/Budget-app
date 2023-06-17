@@ -1,15 +1,61 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url('http://fonts.cdnfonts.com/css/proxima-nova-2?styles=44817,44813');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --main: #3778c2;
+  --second: #5fb523;
+  --third: #434b54;
+  --fourth: #6e757d;
+  --fifth: #d7dadf;
+  --error: #e2e05c;
+  --success: #009070;
+  --white: #fff;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #fcfcfc;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  background: var(--main);
+  height: 72px;
+  padding: 16px;
+  gap: 20px;
+  justify-content: center;
+}
+
+.top-nav,
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--main);
+}
+
+.hamburger,
+.search {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+
