@@ -84,7 +84,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [My-Exp](https://my-expenses-3hoz.onrender.com) 
+- [Budget Buddy](https://budget-app-3erk.onrender.com/) 
 
 - [video](https://www.loom.com/share/21738339e9c640b4873369c14365c530)
 
